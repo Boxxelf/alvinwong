@@ -103,6 +103,9 @@ summary::-webkit-details-marker { display: none; }
   will-change: transform;
 }
 .exp__float.is-on { opacity: .85; }
+.exp__shot { right: 8vw; width: min(46vw, 680px); aspect-ratio: 16 / 10; background: #111; overflow: hidden; }
+.exp__shot.is-on { opacity: 1; }
+.exp__shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .exp__day { position: relative; z-index: 1; padding: 0 var(--gutter); margin: 12vh 0 3vh; font-size: var(--body-l); }
 .exp__day:first-of-type { margin-top: 0; }
 .exp__list { position: relative; z-index: 1; border-bottom: 1px solid rgba(255,255,255,.75); }

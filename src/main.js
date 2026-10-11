@@ -103,20 +103,33 @@ async function init() {
 
   // ---------- experience hover panel ----------
   const exp = document.querySelector('.exp');
-  const float = document.querySelector('.exp__float');
+  const float = document.querySelector('canvas.exp__float');
+  const shot = document.querySelector('.exp__shot');
+  const shotImg = shot.querySelector('img');
   const floatTarget = hazeTargets.get(float);
   let floatY = 0;
   let floatTo = 0;
   exp.querySelectorAll('.exp__row').forEach((row) => {
+    // project rows show their mockup; experience rows show generated haze
+    const src = row.dataset.shot && import.meta.env.BASE_URL + row.dataset.shot;
+    if (src) new Image().src = src;
     row.addEventListener('mouseenter', () => {
-      float.classList.add('is-on');
-      if (floatTarget) floatTarget.seed = Number(row.dataset.seed);
+      if (src) {
+        shotImg.src = src;
+        shot.classList.add('is-on');
+      } else {
+        float.classList.add('is-on');
+        if (floatTarget) floatTarget.seed = Number(row.dataset.seed);
+      }
     });
-    row.addEventListener('mouseleave', () => float.classList.remove('is-on'));
+    row.addEventListener('mouseleave', () => {
+      float.classList.remove('is-on');
+      shot.classList.remove('is-on');
+    });
   });
   exp.addEventListener('mousemove', (e) => {
     const r = exp.getBoundingClientRect();
-    floatTo = e.clientY - r.top - float.offsetHeight / 2;
+    floatTo = e.clientY - r.top;
   });
 
   // ---------- outro: name rises and un-squashes ----------
@@ -154,7 +167,8 @@ async function init() {
   // ---------- frame loop ----------
   gsap.ticker.add(() => {
     floatY += (floatTo - floatY) * 0.12;
-    float.style.transform = `translate3d(0, ${floatY}px, 0)`;
+    float.style.transform = `translate3d(0, ${floatY - float.offsetHeight / 2}px, 0)`;
+    shot.style.transform = `translate3d(0, ${floatY - shot.offsetHeight / 2}px, 0)`;
     warp?.render();
     haze?.render();
   });
