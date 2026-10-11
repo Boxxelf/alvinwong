@@ -150,18 +150,11 @@ summary::-webkit-details-marker { display: none; }
 
 /* ---------- Venue / education ---------- */
 .venue { background: var(--ink); color: var(--paper); }
-.venue__hero { position: relative; height: 92vh; }
-.venue__label {
-  position: absolute; left: var(--gutter); top: 12px; z-index: 1;
-  font-size: var(--body-l); letter-spacing: -0.02em; color: #fff;
-}
 .venue__block {
   padding: 16vh var(--gutter);
   font-size: clamp(24px, 2.6vw, 40px); line-height: 1.12; letter-spacing: -0.02em; text-align: center;
 }
 .venue__block p { max-width: 26em; margin: 0 auto; }
-.venue__grid { display: grid; grid-template-columns: 1fr 1fr; }
-.venue__cell { position: relative; aspect-ratio: 1 / 1; }
 
 /* ---------- Outro ---------- */
 .outro {
@@ -217,9 +210,7 @@ summary::-webkit-details-marker { display: none; }
   .pass__name { font-size: 15vw; }
   .pass__tag { font-size: 10px; }
   .shots { grid-template-columns: 1fr; margin-top: 5vh; }
-  .venue__hero { height: 60vh; }
-  .venue__grid { grid-template-columns: 1fr; }
-  .outro__sub { transform: none; align-self: flex-start; font-size: 8vw; }
+      .outro__sub { transform: none; align-self: flex-start; font-size: 8vw; }
   .outro__name { font-size: 16.4vw; }
   .footer { grid-template-columns: 1fr 1fr; row-gap: 18px; }
   .footer__logo { grid-column: 1 / -1; }
