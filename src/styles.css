@@ -139,7 +139,7 @@ summary::-webkit-details-marker { display: none; }
   position: absolute; left: 12px; top: 10px;
   font-size: var(--meta); text-transform: uppercase; letter-spacing: 0.04em; color: #fff;
 }
-.shot:nth-child(2) figcaption { color: #000; }
+.shot--light figcaption { color: #000; }
 
 /* ---------- Skills (artist list) ---------- */
 .skills { background: var(--paper); padding: 14vh var(--gutter) 24vh; text-align: center; }
