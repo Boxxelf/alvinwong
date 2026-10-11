@@ -131,6 +131,16 @@ async function init() {
         scrollTrigger: { trigger: '.outro', start: 'top 85%', end: 'center center', scrub: true } });
   }
 
+  // ---------- project shots: slow zoom-out as they scroll through ----------
+  if (!reduced) {
+    gsap.utils.toArray('.shot img').forEach((img) => {
+      gsap.fromTo(img, { scale: 1.12 }, {
+        scale: 1, ease: 'none',
+        scrollTrigger: { trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: true },
+      });
+    });
+  }
+
   // ---------- active nav link ----------
   const links = [...document.querySelectorAll('.nav__links a')];
   links.forEach((a) => {
