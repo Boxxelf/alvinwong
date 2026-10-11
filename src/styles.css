@@ -86,7 +86,6 @@ summary::-webkit-details-marker { display: none; }
 .about__text .meta { margin-bottom: 2.2em; font-size: var(--meta); }
 .about__text p + p { margin-top: 1.05em; }
 .about__media { grid-column: 7 / span 6; position: relative; aspect-ratio: 4 / 3; align-self: center; }
-.haze { display: block; width: 100%; height: 100%; background: #111; }
 .about__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 /* ---------- Experience table ---------- */
@@ -96,13 +95,11 @@ summary::-webkit-details-marker { display: none; }
   font-size: var(--body-l); letter-spacing: -0.02em;
 }
 .exp__float {
-  position: absolute; z-index: 0; right: 18vw; top: 0;
-  width: min(34vw, 460px); height: auto; aspect-ratio: 4 / 5;
+  position: absolute; z-index: 0; top: 0;
   opacity: 0; transition: opacity .35s ease;
   pointer-events: none;
   will-change: transform;
 }
-.exp__float.is-on { opacity: .85; }
 .exp__shot { right: 8vw; width: min(46vw, 680px); aspect-ratio: 16 / 10; background: #111; overflow: hidden; }
 .exp__shot.is-on { opacity: 1; }
 .exp__shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -165,6 +162,10 @@ summary::-webkit-details-marker { display: none; }
 .venue__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .venue__cell { aspect-ratio: 3 / 2; overflow: hidden; }
 .venue__cell--wide { grid-column: 1 / -1; aspect-ratio: 21 / 9; }
+.venue__kicker { font-size: var(--meta); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 1.6em; }
+.venue__grid--cava { grid-template-columns: repeat(6, 1fr); }
+.venue__grid--cava .venue__cell { grid-column: span 2; aspect-ratio: 1 / 1; }
+.venue__grid--cava .venue__cell:nth-child(n+4) { grid-column: span 3; aspect-ratio: 4 / 3; }
 .venue__block {
   padding: 16vh var(--gutter);
   font-size: clamp(24px, 2.6vw, 40px); line-height: 1.12; letter-spacing: -0.02em; text-align: center;
@@ -225,7 +226,9 @@ summary::-webkit-details-marker { display: none; }
   .pass__name { font-size: 15vw; }
   .pass__tag { font-size: 10px; }
   .venue__hero { height: 60vh; }
-  .venue__grid { grid-template-columns: 1fr 1fr; }
+  .venue__grid, .venue__grid--cava { grid-template-columns: 1fr 1fr; }
+  .venue__grid--cava .venue__cell, .venue__grid--cava .venue__cell:nth-child(n+4) { grid-column: span 1; aspect-ratio: 1 / 1; }
+  .venue__grid--cava .venue__cell:first-child { grid-column: 1 / -1; aspect-ratio: 4 / 3; }
   .shots { grid-template-columns: 1fr; margin-top: 5vh; }
       .outro__sub { transform: none; align-self: flex-start; font-size: 8vw; }
   .outro__name { font-size: 16.4vw; }

@@ -2,7 +2,6 @@ import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { WarpText, HERO_FRAMES, THROUGH_FRAMES } from './warp-text.js';
-import { Haze } from './haze.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -96,36 +95,22 @@ async function init() {
   // the hero is pinned from the very top, so it must be live on first paint
   ScrollTrigger.refresh();
 
-  // ---------- generated photography ----------
-  const haze = useGL ? new Haze() : null;
-  const hazeTargets = new Map();
-  if (haze) document.querySelectorAll('canvas.haze').forEach((el) => hazeTargets.set(el, haze.add(el)));
-
   // ---------- experience hover panel ----------
   const exp = document.querySelector('.exp');
-  const float = document.querySelector('canvas.exp__float');
   const shot = document.querySelector('.exp__shot');
   const shotImg = shot.querySelector('img');
-  const floatTarget = hazeTargets.get(float);
   let floatY = 0;
   let floatTo = 0;
   exp.querySelectorAll('.exp__row').forEach((row) => {
-    // project rows show their mockup; experience rows show generated haze
-    const src = row.dataset.shot && import.meta.env.BASE_URL + row.dataset.shot;
-    if (src) new Image().src = src;
+    // rows with a photo or mockup show it behind the table; the rest show nothing
+    if (!row.dataset.shot) return;
+    const src = import.meta.env.BASE_URL + row.dataset.shot;
+    new Image().src = src;
     row.addEventListener('mouseenter', () => {
-      if (src) {
-        shotImg.src = src;
-        shot.classList.add('is-on');
-      } else {
-        float.classList.add('is-on');
-        if (floatTarget) floatTarget.seed = Number(row.dataset.seed);
-      }
+      shotImg.src = src;
+      shot.classList.add('is-on');
     });
-    row.addEventListener('mouseleave', () => {
-      float.classList.remove('is-on');
-      shot.classList.remove('is-on');
-    });
+    row.addEventListener('mouseleave', () => shot.classList.remove('is-on'));
   });
   exp.addEventListener('mousemove', (e) => {
     const r = exp.getBoundingClientRect();
@@ -167,10 +152,8 @@ async function init() {
   // ---------- frame loop ----------
   gsap.ticker.add(() => {
     floatY += (floatTo - floatY) * 0.12;
-    float.style.transform = `translate3d(0, ${floatY - float.offsetHeight / 2}px, 0)`;
     shot.style.transform = `translate3d(0, ${floatY - shot.offsetHeight / 2}px, 0)`;
     warp?.render();
-    haze?.render();
   });
 
   window.addEventListener('resize', () => {
