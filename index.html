@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alvin Wong — UX Designer</title>
+  <meta name="description" content="Alvin Wong — high school UX designer from Eastvale, California. Figma, wireframing, prototyping, and a little magic." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="nav__logo" href="#top" data-scroll>ALVIN WONG</a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#about" data-scroll>About</a>
+      <a href="#experience" data-scroll>Experience</a>
+      <a href="#projects" data-scroll>Projects</a>
+      <a href="#skills" data-scroll>Skills</a>
+      <a href="#info" data-scroll>Contact</a>
+    </nav>
+  </header>
+
+  <canvas class="warp-canvas" aria-hidden="true"></canvas>
+
+  <main>
+    <!-- 1 · Hero -->
+    <section class="stage stage--light" id="top" data-warp="hero">
+      <h1 class="warp warp--hero">
+        <span class="warp__big">ALVIN WONG</span>
+        <span class="warp__sub">UX Designer,</span>
+        <span class="warp__sub">Magician &amp; Student</span>
+        <span class="warp__sub">— Eastvale, California</span>
+      </h1>
+    </section>
+
+    <!-- 2 · Status -->
+    <section class="stage stage--light" data-warp="status">
+      <p class="warp warp--m">
+        <span>Class of 2027,</span>
+        <span>open to internships</span>
+      </p>
+    </section>
+
+    <!-- 3 · Statement -->
+    <section class="stage stage--light" data-warp="statement1">
+      <p class="warp warp--m">
+        <span>Designing digital experiences</span>
+        <span>that feel like magic.</span>
+      </p>
+    </section>
+    <section class="stage stage--light" data-warp="statement2">
+      <p class="warp warp--m">
+        <span>Research, wireframe,</span>
+        <span>prototype — then perform.</span>
+      </p>
+    </section>
+
+    <!-- 4 · About -->
+    <section class="about" id="about">
+      <div class="about__text">
+        <p class="meta">About</p>
+        <p>Alvin Wong is a high school senior at Eleanor Roosevelt High School in Eastvale, California, working in UX design — Figma, wireframing, prototyping, and building user-friendly digital products.</p>
+        <p>He designs end to end: research first, then FigJam wireframes, then prototypes people can actually click through. Lately that means Catalyst, a career navigation platform, and Card Binder, an iOS app for trading card collectors.</p>
+        <p>Off screen he is a magician and Magic Club officer. Performing taught him the thing design keeps reminding him of — the audience decides whether it worked. He is looking for internship, volunteer, and part-time opportunities.</p>
+      </div>
+      <div class="about__media">
+        <canvas class="haze" data-variant="warm" data-seed="1.7"></canvas>
+      </div>
+    </section>
+
+    <!-- 5 · Principles (black) -->
+    <section class="stage stage--dark" data-warp="p1">
+      <p class="warp warp--l"><span>USER</span><span>FIRST</span></p>
+    </section>
+    <section class="stage stage--dark" data-warp="p2">
+      <p class="warp warp--l"><span>CLEAR</span><span>DESIGN</span></p>
+    </section>
+    <section class="stage stage--dark" data-warp="p3">
+      <p class="warp warp--l"><span>A LITTLE</span><span>MAGIC</span></p>
+    </section>
+
+    <!-- 6 · Experience (black table) -->
+    <section class="exp" id="experience">
+      <canvas class="haze exp__float" data-variant="mono" data-seed="3.1" aria-hidden="true"></canvas>
+      <p class="exp__day">Experience — 2023 to present</p>
+      <ol class="exp__list">
+        <li class="exp__row" data-seed="2.3">
+          <details>
+            <summary>
+              <span class="c-year">2023 — Present</span>
+              <span class="c-role">Magic Club Officer</span>
+              <span class="c-org">Eleanor Roosevelt High School</span>
+              <span class="c-loc">Eastvale, CA</span>
+            </summary>
+            <ul class="exp__notes">
+              <li>Organized performances and special events for 40+ club members</li>
+              <li>Mentored new members in trick fundamentals and performance technique</li>
+              <li>Coordinated with the officer team to keep the club inclusive</li>
+              <li>Performed at city events such as the Mid-Autumn Festival and school rallies</li>
+              <li>Brought a different kind of hobby into the lives of teens</li>
+            </ul>
+          </details>
+        </li>
+        <li class="exp__row" data-seed="5.9">
+          <details>
+            <summary>
+              <span class="c-year">May 2025 — Present</span>
+              <span class="c-role">Team Member</span>
+              <span class="c-org">CAVA Volunteer</span>
+              <span class="c-loc">Eastvale, CA</span>
+            </summary>
+            <ul class="exp__notes">
+              <li>Organized and coordinated city events and community cleanups</li>
+              <li>Engaged with community members to maintain public spaces</li>
+              <li>Collaborated with team members across multiple projects</li>
+            </ul>
+          </details>
+        </li>
+        <li class="exp__row" data-seed="8.4">
+          <details>
+            <summary>
+              <span class="c-year">Summer 2024</span>
+              <span class="c-role">Restaurant Assistant</span>
+              <span class="c-org">Dim Sum Restaurant</span>
+              <span class="c-loc">Arizona</span>
+            </summary>
+            <ul class="exp__notes">
+              <li>Gave friendly customer service — taking orders, serving food and drinks</li>
+              <li>Kept the restaurant clean and organized: tables, floors, dishes</li>
+              <li>Helped manage inventory and restock supplies</li>
+              <li>Worked with the team to stay efficient in a fast-paced environment</li>
+            </ul>
+          </details>
+        </li>
+      </ol>
+      <p class="exp__day">Projects — 2025 to present</p>
+      <ol class="exp__list">
+        <li class="exp__row" data-seed="11.2">
+          <a class="exp__link" href="#projects" data-scroll>
+            <span class="c-year">2025 —</span>
+            <span class="c-role">Catalyst</span>
+            <span class="c-org">Career navigation platform</span>
+            <span class="c-loc">Figma</span>
+          </a>
+        </li>
+        <li class="exp__row" data-seed="14.6">
+          <a class="exp__link" href="#projects" data-scroll>
+            <span class="c-year">2025</span>
+            <span class="c-role">Card Binder</span>
+            <span class="c-org">iOS application</span>
+            <span class="c-loc">SwiftUI</span>
+          </a>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 7 · Projects (giant type, like the ticket passes) -->
+    <section class="projects" id="projects">
+      <article class="pass">
+        <h2 class="pass__name">Catalyst<a class="pass__tag" href="https://www.figma.com/proto/Cv5XZeAiSEkhpmPYAhv5bk/Project-1---Alvin?node-id=17-4&amp;viewport=2425%2C994%2C0.25&amp;t=Sjgbfg7RW44Mtaxb-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=17%3A4&amp;show-proto-sidebar=1&amp;page-id=0%3A1" target="_blank" rel="noopener">Figma ↗</a></h2>
+        <p class="pass__desc">A web platform helping high school graduates and undergraduates navigate job searches, internships and early-career opportunities. End-to-end UX, research through prototype — Figma, FigJam, Illustrator, Canva; front end in progress with Cursor and HBuilder.</p>
+      </article>
+      <article class="pass">
+        <h2 class="pass__name">Card Binder<a class="pass__tag" href="https://github.com/Boxxelf/Card-Binder" target="_blank" rel="noopener">GitHub ↗</a></h2>
+        <p class="pass__desc">An iOS app for trading card collectors — organize by player, team and condition, with live totals and estimated collection value. SwiftUI and CoreData, built for Pokémon, MTG and sports card collectors.</p>
+      </article>
+    </section>
+
+    <!-- 8 · Skills (centered list, like the artists) -->
+    <section class="skills" id="skills">
+      <p class="meta">Skills &amp; Tools</p>
+      <ul class="skills__list">
+        <li>UX Design</li>
+        <li>Figma</li>
+        <li>FigJam</li>
+        <li>Wireframing</li>
+        <li>Prototyping</li>
+        <li>User Research</li>
+        <li>SwiftUI</li>
+        <li>CoreData</li>
+        <li>Adobe Illustrator</li>
+        <li>Canva</li>
+        <li>Cursor</li>
+        <li>Google Workspace</li>
+        <li>Leadership</li>
+        <li>Communication</li>
+        <li>Team Collaboration</li>
+        <li>Problem Solving</li>
+        <li>Time Management</li>
+        <li>Attention to Detail</li>
+        <li>Customer Service</li>
+        <li>Sleight of Hand</li>
+      </ul>
+    </section>
+
+    <!-- 9 · Education (venue) -->
+    <section class="venue">
+      <div class="venue__hero">
+        <canvas class="haze" data-variant="mono" data-seed="7.7" data-light="0.7,0.8"></canvas>
+        <span class="venue__label">Eleanor Roosevelt High School</span>
+      </div>
+      <div class="venue__block">
+        <p>Eleanor Roosevelt High School, Eastvale, California — class of 2027. Where Alvin studies, designs, and since 2023 has served as a Magic Club officer, turning a niche hobby into a stage for more than forty students.</p>
+      </div>
+      <div class="venue__grid">
+        <div class="venue__cell">
+          <canvas class="haze" data-variant="mono" data-seed="9.3" data-light="0.3,0.75"></canvas>
+          <span class="venue__label">Mid-Autumn Festival</span>
+        </div>
+        <div class="venue__cell">
+          <canvas class="haze" data-variant="mono" data-seed="12.8" data-light="0.65,0.6"></canvas>
+          <span class="venue__label">School Rallies</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 · Outro -->
+    <section class="outro">
+      <p class="outro__sub">UX Designer,<br />Magician &amp; Student<br />— Eastvale, California</p>
+      <p class="outro__name" aria-hidden="true">ALVIN WONG</p>
+    </section>
+
+    <!-- 11 · Info accordion -->
+    <section class="info" id="info">
+      <details>
+        <summary>What I'm looking for</summary>
+        <div class="info__body"><p>Internships, volunteer roles and part-time work where I can apply UX design, get hands-on experience and contribute to a team. I'm reliable, I learn fast, and I like hard problems.</p></div>
+      </details>
+      <details>
+        <summary>Education</summary>
+        <div class="info__body"><p>Eleanor Roosevelt High School, Eastvale, CA — expected graduation 2027.</p></div>
+      </details>
+      <details>
+        <summary>Tools</summary>
+        <div class="info__body"><p>Figma, FigJam, Adobe Illustrator, Canva, Cursor, HBuilder, Xcode (SwiftUI, CoreData), Google Workspace.</p></div>
+      </details>
+      <details>
+        <summary>Magic Club</summary>
+        <div class="info__body"><p>Officer since 2023. Organizing shows for 40+ members, mentoring new performers, and performing at city events and school rallies.</p></div>
+      </details>
+      <details>
+        <summary>Contact</summary>
+        <div class="info__body"><p>Email <a href="mailto:Alviebm@gmail.com">Alviebm@gmail.com</a> or find me on <a href="https://www.linkedin.com/in/alvin-undefined-081593439" target="_blank" rel="noopener">LinkedIn</a>.</p></div>
+      </details>
+    </section>
+  </main>
+
+  <!-- 12 · Footer -->
+  <footer class="footer">
+    <span class="footer__logo">ALVIN WONG</span>
+    <div class="footer__col"><span>For all enquiries please contact</span><a href="mailto:Alviebm@gmail.com">Alviebm@gmail.com</a></div>
+    <div class="footer__col"><span>Based in</span><span>Eastvale, California</span></div>
+    <div class="footer__col"><span>Education</span><span>Eleanor Roosevelt High School<br />Class of 2027</span></div>
+    <div class="footer__col"><a href="https://www.linkedin.com/in/alvin-undefined-081593439" target="_blank" rel="noopener">LinkedIn</a></div>
+    <div class="footer__col"><span>© 2026 Alvin Wong</span></div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

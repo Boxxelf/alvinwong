@@ -1,0 +1,20 @@
+{
+  "name": "alvin-wong-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vite build && cd dist && touch .nojekyll && git init -q -b gh-pages && git add -A && git commit -qm deploy && git push -f https://github.com/Boxxelf/alvinwong.git gh-pages && rm -rf .git"
+  },
+  "devDependencies": {
+    "vite": "^7.1.12"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.14",
+    "three": "^0.169.0"
+  }
+}
